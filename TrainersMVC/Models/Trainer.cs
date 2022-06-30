@@ -16,5 +16,10 @@ namespace TrainersMVC.Models
         public int CourseID { get; set; }
 
         public Course Course { get; set; }
+
+        public string FullName
+        {
+            get => $"{FirstName} {LastName}";
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using TrainersMVC.Configurations;
 
 namespace TrainersMVC.Models
 {
@@ -31,6 +32,13 @@ namespace TrainersMVC.Models
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new TrainerConfiguration());
+            modelBuilder.Configurations.Add(new CourseConfiguration());
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

@@ -167,6 +167,8 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Configurations\CourseConfiguration.cs" />
+    <Compile Include="Configurations\TrainerConfiguration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -180,6 +182,10 @@
     <Compile Include="Migrations\202206301430273_CreateTablesTrainersAndCourses.cs" />
     <Compile Include="Migrations\202206301430273_CreateTablesTrainersAndCourses.Designer.cs">
       <DependentUpon>202206301430273_CreateTablesTrainersAndCourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206301444092_ChangeCodeFirstConventionsFluentApi.cs" />
+    <Compile Include="Migrations\202206301444092_ChangeCodeFirstConventionsFluentApi.Designer.cs">
+      <DependentUpon>202206301444092_ChangeCodeFirstConventionsFluentApi.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -269,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206301430273_CreateTablesTrainersAndCourses.resx">
       <DependentUpon>202206301430273_CreateTablesTrainersAndCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206301444092_ChangeCodeFirstConventionsFluentApi.resx">
+      <DependentUpon>202206301444092_ChangeCodeFirstConventionsFluentApi.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
