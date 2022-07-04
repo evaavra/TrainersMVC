@@ -45,6 +45,16 @@ namespace TrainersMVC.Repositories
             _context.Trainers.Add(trainer);
         }
 
+        public void Edit(TrainerFormViewModel viewModel)
+        {
+            var trainer = GetByIdWithCourse(viewModel.ID);
+            trainer.FirstName = viewModel.FirstName;
+            trainer.LastName = viewModel.LastName;
+            trainer.CourseID = viewModel.CourseID;
+            trainer.Thumbnail = viewModel.Thumbnail;
+            Save();
+        }
+
         public void Save()
         {
             _context.SaveChanges();

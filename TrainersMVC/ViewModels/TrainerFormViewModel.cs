@@ -33,5 +33,13 @@ namespace TrainersMVC.ViewModels
         public HttpPostedFileBase ImageFile { get; set; }
 
         public IEnumerable<Course> Courses { get; set; }
+
+        public string Action
+        {
+            get
+            {
+                return (ID != 0) ? "Edit" : "Create";
+            }
+        }
     }
 }

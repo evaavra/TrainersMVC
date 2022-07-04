@@ -86,6 +86,55 @@ namespace TrainersMVC.Controllers
             }
             
         }
+
+        public ActionResult Edit(int id)
+        {
+            try
+            {
+                var trainer = _trainersRepository.GetByIdWithCourse(id);
+                if (trainer == null)
+                {
+                    return HttpNotFound();
+                }
+                else
+                {
+                    var viewModel = new TrainerFormViewModel()
+                    {
+                        ID = trainer.ID,
+                        FirstName = trainer.FirstName,
+                        LastName = trainer.LastName,
+                        CourseID = trainer.CourseID,
+                        Thumbnail = trainer.Thumbnail,
+                        Courses = _coursesRepository.GetAll()
+                    };
+                    return View("Create",viewModel);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Edit(TrainerFormViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                viewModel.Courses = _coursesRepository.GetAll();
+                return View(viewModel);
+            }
+            if (viewModel.ImageFile != null)
+            {
+                viewModel.Thumbnail = Path.GetFileName(viewModel.ImageFile.FileName);
+                string fullPath = Path.Combine(Server.MapPath("~/img"), viewModel.Thumbnail);
+                viewModel.ImageFile.SaveAs(fullPath);
+            }
+            _trainersRepository.Edit(viewModel);
+            
+            return RedirectToAction("Index");
+        }
     }
 
     
