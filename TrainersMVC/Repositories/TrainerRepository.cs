@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using TrainersMVC.Models;
+using System.Data.Entity;
 
 namespace TrainersMVC.Repositories
 {
@@ -13,6 +14,11 @@ namespace TrainersMVC.Repositories
         public TrainerRepository()
         {
             _context = new ApplicationDbContext();
+        }
+
+        public IEnumerable<Trainer> GetAllWithCourses()
+        {
+            return _context.Trainers.Include(t => t.Course);
         }
 
     }
