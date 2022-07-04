@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using TrainersMVC.Models;
@@ -59,5 +60,33 @@ namespace TrainersMVC.Controllers
             _trainersRepository.Save();
             return RedirectToAction("Index");
         }
+
+        public ActionResult Details(int id)
+        {
+            try
+            {
+                var trainer = _trainersRepository.GetByIdWithCourse(id);
+                if (trainer == null)
+                {
+                    return HttpNotFound();
+                }
+                else
+                {
+                    var viewModel = new TrainerDetailsViewModel()
+                    {
+                        Trainer = trainer
+                    };
+                    return View(viewModel);
+                }
+                    
+            }
+            catch(Exception ex)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            
+        }
     }
+
+    
 }

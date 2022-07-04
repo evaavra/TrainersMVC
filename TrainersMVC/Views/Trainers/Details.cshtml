@@ -1,0 +1,27 @@
+﻿@model TrainersMVC.ViewModels.TrainerDetailsViewModel
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<dl>
+    <dt>
+        @Html.DisplayNameFor(model => model.Trainer.FullName):
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Trainer.FullName)
+    </dd>
+    <dt>
+        Course:
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Trainer.Course.Title)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Trainer.Thumbnail)
+    </dt>
+    <dd>
+        <img src="~/img/@Url.Content(Model.Trainer.Thumbnail)"/>
+    </dd>
+</dl>

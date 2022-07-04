@@ -22,6 +22,17 @@ namespace TrainersMVC.Repositories
             return _context.Trainers.Include(t => t.Course);
         }
 
+        public Trainer GetByIdWithCourse(int? trainerId)
+        {
+            if(trainerId == null)
+            {
+                throw new ArgumentNullException(nameof(trainerId));
+            }
+            return _context.Trainers
+                .Include(t => t.Course)
+                .SingleOrDefault(t => t.ID == trainerId);
+        }
+
         public void Create(TrainerFormViewModel viewModel)
         {
             var trainer = new Trainer()

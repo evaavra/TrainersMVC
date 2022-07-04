@@ -11,23 +11,26 @@
     <div class="form-group">
         @Html.LabelFor(m => m.FirstName)
         @Html.EditorFor(m => m.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(m => m.FirstName)
     </div>
 
     <div class="form-group">
         @Html.LabelFor(m => m.LastName)
         @Html.EditorFor(m => m.LastName, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(m => m.LastName)
     </div>
 
     <div class="form-group">
         @Html.LabelFor(m => m.CourseID)
         @Html.DropDownListFor(m => m.CourseID, new SelectList(Model.Courses, "ID", "Title"), "Select a Course", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CourseID)
     </div>
 
     <div class="form=group">
         @Html.LabelFor(m => m.Thumbnail)
         <input type="file" name="ImageFile" />
     </div>
-
+    <br/>
     <button type="submit">Submit</button>
 
 }

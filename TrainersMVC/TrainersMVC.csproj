@@ -206,6 +206,7 @@
     <Compile Include="Repositories\CourseRepository.cs" />
     <Compile Include="Repositories\TrainerRepository.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\TrainerDetailsViewModel.cs" />
     <Compile Include="ViewModels\TrainerFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -267,6 +268,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Trainers\Index.cshtml" />
     <Content Include="Views\Trainers\Create.cshtml" />
+    <Content Include="Views\Trainers\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

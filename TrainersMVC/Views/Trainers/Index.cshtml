@@ -14,7 +14,7 @@
             @Html.DisplayNameFor(model => model.FullName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Course.Title)
+            Course
         </th>
         <th></th>
     </tr>
@@ -28,7 +28,11 @@
             <td>
                 @Html.DisplayFor(modeltrainer => trainer.Course.Title)
             </td>
-            
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = trainer.ID }) |
+                @Html.ActionLink("Edit", "Edit", new { id = trainer.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = trainer.ID })
+            </td>
             
         </tr>
     }
