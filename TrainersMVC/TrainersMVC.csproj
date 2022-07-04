@@ -172,6 +172,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TrainersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -186,6 +187,10 @@
     <Compile Include="Migrations\202206301444092_ChangeCodeFirstConventionsFluentApi.cs" />
     <Compile Include="Migrations\202206301444092_ChangeCodeFirstConventionsFluentApi.Designer.cs">
       <DependentUpon>202206301444092_ChangeCodeFirstConventionsFluentApi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207041030367_AddCoursesToDatabase.cs" />
+    <Compile Include="Migrations\202207041030367_AddCoursesToDatabase.Designer.cs">
+      <DependentUpon>202207041030367_AddCoursesToDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -257,6 +262,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Trainers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -280,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206301444092_ChangeCodeFirstConventionsFluentApi.resx">
       <DependentUpon>202206301444092_ChangeCodeFirstConventionsFluentApi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207041030367_AddCoursesToDatabase.resx">
+      <DependentUpon>202207041030367_AddCoursesToDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
