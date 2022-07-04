@@ -192,6 +192,10 @@
     <Compile Include="Migrations\202207041030367_AddCoursesToDatabase.Designer.cs">
       <DependentUpon>202207041030367_AddCoursesToDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202207041147161_AddImageToTrainers.cs" />
+    <Compile Include="Migrations\202207041147161_AddImageToTrainers.Designer.cs">
+      <DependentUpon>202207041147161_AddImageToTrainers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Course.cs" />
@@ -202,6 +206,7 @@
     <Compile Include="Repositories\CourseRepository.cs" />
     <Compile Include="Repositories\TrainerRepository.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\TrainerFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -212,6 +217,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\im_av.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -260,6 +266,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Trainers\Index.cshtml" />
+    <Content Include="Views\Trainers\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -289,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202207041030367_AddCoursesToDatabase.resx">
       <DependentUpon>202207041030367_AddCoursesToDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207041147161_AddImageToTrainers.resx">
+      <DependentUpon>202207041147161_AddImageToTrainers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -14,5 +14,10 @@ namespace TrainersMVC.Repositories
         {
             _context = new ApplicationDbContext();
         }
+
+        public IEnumerable<Course> GetAll()
+        {
+            return _context.Courses;
+        }
     }
 }

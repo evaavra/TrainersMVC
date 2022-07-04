@@ -20,6 +20,8 @@ namespace TrainersMVC.Configurations
                 .HasMaxLength(60);
 
             Ignore(t => t.FullName);
+
+            Ignore(t => t.ImageFile);
         }
     }
 }
