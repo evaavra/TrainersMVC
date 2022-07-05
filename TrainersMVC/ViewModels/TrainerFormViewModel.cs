@@ -41,5 +41,7 @@ namespace TrainersMVC.ViewModels
                 return (ID != 0) ? "Edit" : "Create";
             }
         }
+
+        public string Heading { get; set; }
     }
 }

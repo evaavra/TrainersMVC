@@ -22,6 +22,16 @@ namespace TrainersMVC.Repositories
             return _context.Trainers.Include(t => t.Course);
         }
 
+        public Trainer GetById(int? trainerId)
+        {
+            if (trainerId == null)
+            {
+                throw new ArgumentNullException(nameof(trainerId));
+            }
+            return _context.Trainers
+                .SingleOrDefault(t => t.ID == trainerId);
+        }
+
         public Trainer GetByIdWithCourse(int? trainerId)
         {
             if(trainerId == null)
@@ -63,6 +73,12 @@ namespace TrainersMVC.Repositories
         public void Dispose()
         {
             _context.Dispose();
+        }
+
+        public void Delete(Trainer trainer)
+        {
+            _context.Trainers.Remove(trainer);
+            Save();
         }
     }
 }

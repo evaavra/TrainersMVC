@@ -1,9 +1,9 @@
 ﻿@model TrainersMVC.ViewModels.TrainerFormViewModel
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = Model.Heading;
 }
 
-<h2>Create</h2>
+<h2>@Model.Heading</h2>
 
 @using (Html.BeginForm(Model.Action, "Trainers", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {

@@ -32,6 +32,7 @@ namespace TrainersMVC.Controllers
         {
             var viewmodel = new TrainerFormViewModel()
             {
+                Heading = "Create a Trainer",
                 Courses = _coursesRepository.GetAll()
             };
             return View(viewmodel);
@@ -43,6 +44,7 @@ namespace TrainersMVC.Controllers
         {
             if (!ModelState.IsValid)
             {
+                viewModel.Heading = "Create a Trainer";
                 viewModel.Courses = _coursesRepository.GetAll();
                 return View(viewModel);
             }
@@ -105,7 +107,8 @@ namespace TrainersMVC.Controllers
                         LastName = trainer.LastName,
                         CourseID = trainer.CourseID,
                         Thumbnail = trainer.Thumbnail,
-                        Courses = _coursesRepository.GetAll()
+                        Courses = _coursesRepository.GetAll(),
+                        Heading = "Edit the Trainer"
                     };
                     return View("Create",viewModel);
                 }
@@ -122,8 +125,9 @@ namespace TrainersMVC.Controllers
         {
             if (!ModelState.IsValid)
             {
+                viewModel.Heading = "Edit the Trainer";
                 viewModel.Courses = _coursesRepository.GetAll();
-                return View(viewModel);
+                return View("Create",viewModel);
             }
             if (viewModel.ImageFile != null)
             {
