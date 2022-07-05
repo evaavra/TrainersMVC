@@ -80,5 +80,10 @@ namespace TrainersMVC.Repositories
             _context.Trainers.Remove(trainer);
             Save();
         }
+
+        public IEnumerable<Trainer> GetFirstFour()
+        {
+            return _context.Trainers.Include(t => t.Course).Take(4);
+        }
     }
 }

@@ -3,21 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TrainersMVC.Repositories;
+using TrainersMVC.ViewModels;
 
 namespace TrainersMVC.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        private readonly TrainerRepository _trainerRepository;
+
+        public HomeController()
         {
-            return View();
+            _trainerRepository = new TrainerRepository();
         }
 
-        public ActionResult About()
+        public ActionResult Index()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            var viewmodel = new HomeViewModel()
+            {
+                Trainers = _trainerRepository.GetFirstFour()
+            };
+            return View(viewmodel);
         }
 
         public ActionResult Contact()
@@ -26,5 +32,6 @@ namespace TrainersMVC.Controllers
 
             return View();
         }
+
     }
 }

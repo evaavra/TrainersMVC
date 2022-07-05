@@ -217,6 +217,7 @@
     <Compile Include="Repositories\CourseRepository.cs" />
     <Compile Include="Repositories\TrainerRepository.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\TrainerDetailsViewModel.cs" />
     <Compile Include="ViewModels\TrainerFormViewModel.cs" />
   </ItemGroup>
@@ -229,6 +230,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\heroimage.jpg" />
     <Content Include="img\im_av.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
