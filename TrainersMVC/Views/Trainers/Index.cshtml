@@ -9,33 +9,37 @@
  @Html.ActionLink("Create New", "Create")
 <br/>
 <br />
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FullName)
-        </th>
-        <th>
-            Course
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var trainer in Model)
-    {
+<table class="table" id="trainers">
+    <thead>
         <tr>
-            <td>
-                @Html.ActionLink(trainer.FullName, "Edit", new { id = trainer.ID })
-            </td>
-            <td>
-                @Html.DisplayFor(modeltrainer => trainer.Course.Title)
-            </td>
-            <td>
-                @Html.ActionLink("Details", "Details", new { id = trainer.ID }) &nbsp&nbsp&nbsp|
-                <button data-trainer-id="@trainer.ID" class="btn btn-link js-delete">Delete</button>
-            </td>
-            
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                Course
+            </th>
+            <th></th>
         </tr>
-    }
+    </thead>
+
+    <tbody>
+        @foreach (var trainer in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(trainer.FullName, "Edit", new { id = trainer.ID })
+                </td>
+                <td>
+                    @Html.DisplayFor(modeltrainer => trainer.Course.Title)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = trainer.ID }) &nbsp&nbsp&nbsp|
+                    <button data-trainer-id="@trainer.ID" class="btn btn-link js-delete">Delete</button>
+                </td>
+
+            </tr>
+        }
+    </tbody>
 
 </table>
 
@@ -43,6 +47,7 @@
 {
     <script>
         $(document).ready(function () {
+            $("#trainers").DataTable();
             $(".js-delete").click(function (e) {
                 var button = $(e.target);
                 e.preventDefault();
