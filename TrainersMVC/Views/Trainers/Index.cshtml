@@ -6,8 +6,9 @@
 
 <h2>Trainers</h2>
 
-@Html.ActionLink("Create New", "Create")
-
+ @Html.ActionLink("Create New", "Create")
+<br/>
+<br />
 <table class="table">
     <tr>
         <th>
@@ -29,8 +30,8 @@
                 @Html.DisplayFor(modeltrainer => trainer.Course.Title)
             </td>
             <td>
-                @Html.ActionLink("Details", "Details", new { id = trainer.ID })   |
-                <button data-trainer-id="@trainer.ID" class="btn btn-link js-delete">Delete</button> 
+                @Html.ActionLink("Details", "Details", new { id = trainer.ID }) &nbsp&nbsp&nbsp|
+                <button data-trainer-id="@trainer.ID" class="btn btn-link js-delete">Delete</button>
             </td>
             
         </tr>
@@ -41,24 +42,6 @@
 @section scripts
 {
     <script>
-        @*$(document).ready(function () {
-            $(".js-delete").click(function (e) {
-                var button = $(e.target);
-                e.preventDefault();
-                if (confirm("Are you sure you want to delete this trainer?")) {
-                    $.ajax({
-                        url: "api/trainers/" + button.attr("data-trainer-id"),
-                        method: "DELETE"
-                    }).done(function () {
-                        alert("Something went well");
-                    }).fail(function () {
-                        alert("Something failed");
-                    });
-                }
-                
-            });
-        });*@
-
         $(document).ready(function () {
             $(".js-delete").click(function (e) {
                 var button = $(e.target);

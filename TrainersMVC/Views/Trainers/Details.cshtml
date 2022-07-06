@@ -5,23 +5,31 @@
 
 <h2>Details</h2>
 
-<dl>
+<dl class="dl-horizontal">
     <dt>
         @Html.DisplayNameFor(model => model.Trainer.FullName):
     </dt>
+
     <dd>
         @Html.DisplayFor(model => model.Trainer.FullName)
     </dd>
+
     <dt>
         Course:
     </dt>
+
     <dd>
         @Html.DisplayFor(model => model.Trainer.Course.Title)
     </dd>
+
     <dt>
-        @Html.DisplayNameFor(model => model.Trainer.Thumbnail)
+        @Html.DisplayNameFor(model => model.Trainer.Thumbnail):
     </dt>
+
     <dd>
         <img src="~/img/@Url.Content(Model.Trainer.Thumbnail)" class="trainers-photo"/>
     </dd>
 </dl>
+
+@Html.ActionLink("Edit", "Edit", new { id = Model.Trainer.ID}) |
+@Html.ActionLink("Back to list", "Index")

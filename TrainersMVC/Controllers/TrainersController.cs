@@ -11,6 +11,7 @@ using TrainersMVC.ViewModels;
 
 namespace TrainersMVC.Controllers
 {
+    [Authorize]
     public class TrainersController : Controller
     {
         public readonly TrainerRepository _trainersRepository;

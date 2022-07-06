@@ -33,3 +33,13 @@ img#image-hero {
     width:250px;
     height:250px;
 }
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+img#logo {
+    width: 50px;
+    height: 50%;
+    object-fit: cover;
+}
